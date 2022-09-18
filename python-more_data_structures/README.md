@@ -12,6 +12,6 @@ Files | Description
 [8-simple_delete.py](./8-simple_delete.py) | Python function that deletes a key in a dictionary
 [9-multiply_by_2.py](./9-multiply_by_2.py) | Python function that returns a new dictionary with all values multiplied by 2
 [10-best_score.py](./10-best_score.py) | Python function that returns a key with the biggest integer value
-[11-mutiply_list_map.py](./11-mutiply_list_map.py) | Python function that returns a list with all values multiplied by a number without using any loops
+[11-mutiply_list_map.py](./11-multiply_list_map.py) | Python function that returns a list with all values multiplied by a number without using any loops
 [12-roman_to_int.py](./12-roman_to_int.py) | Python function that converts a Roman numeral to an integer
 [100-weight_average.py](./100-weight_average.py) | Python function that returns the weighted average of all integers tuple (<score>, <weight>)
