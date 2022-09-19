@@ -1,15 +1,17 @@
 #!/usr/bin/python3
+''' Square class'''
+
+
 class Square:
+    ''' square class'''
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
-    # Size property
     @property
     def size(self):
         return self.__size
 
-    # Size setter modifies
     @size.setter
     def size(self, value):
         if type(value) != int:
@@ -19,12 +21,10 @@ class Square:
         else:
             self.__size = value
 
-    # Position property
     @property
     def position(self):
         return self.__position
 
-    # Position setter modifies
     @position.setter
     def position(self, value):
         message = 'position must be a tuple of 2 positive integers'
@@ -37,7 +37,6 @@ class Square:
 
         self.__position = value
 
-    # Functions
     def area(self):
         return self.__size ** 2
 
