@@ -41,15 +41,14 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        size = self.__size
-        nl = self.__position[1]
-        ws = self.__position[0]
-
-        if size == 0:
+        if self.__size == 0:
             print()
-
-        for newlines in range(nl):
+            return
+        for y in range(0, self.__position[1]):
             print()
-
-        for row in range(size):
-            print((' ' * ws) + ('#' * size))
+        for i in range(0, self.__size):
+            for x in range(0, self.__position[0]):
+                print(" ", end="")
+            for j in range(0, self.__size):
+                print("#", end="")
+            print()
