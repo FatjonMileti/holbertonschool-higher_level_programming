@@ -5,7 +5,7 @@
 def matrix_divided(matrix, div):
     """Returns a new matrix that contains elements
     """
-    new_matrix=[]
+    new_matrix = []
     msg1 = "matrix must be a matrix (list of lists) of integers/floats"
     msg2 = "Each row of the matrix must have the same size"
     if type(div) != int and type(div) != float:
