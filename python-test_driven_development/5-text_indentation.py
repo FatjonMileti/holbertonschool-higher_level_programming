@@ -22,4 +22,4 @@ def text_indentation(text):
             i = i.strip(" ")
             s = i + d if s is "" else s + "\n\n" + i + d
 
-    print(s)
+    print(s[:-3], end="")
