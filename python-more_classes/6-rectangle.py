@@ -11,7 +11,6 @@ class Rectangle:
         self.__width = width
         Rectangle.number_of_instances += 1
 
-
         if type(width) is not int:
             raise TypeError('width must be an integer')
         if width < 0:
