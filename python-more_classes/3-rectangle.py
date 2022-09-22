@@ -52,6 +52,7 @@ class Rectangle:
         if self.__height == 0:
             return 0
         return(2 * (self.__width + self.__height))
+
     def __str__(self):
-        str = "\n".join(["#" * self.__width for rows in range(self.__height)])
-        return str
+        rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        return rec
