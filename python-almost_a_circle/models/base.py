@@ -43,10 +43,10 @@ class Base:
     def load_from_file(cls):
         ''' *** *** '''
         filename = cls.__name__ + ".json"
-        if path.exists(filename) == False:
+        if path.exists(filename) is False:
             return []
-        else:
-            with open(filename, "r", encoding="utf-8") as f:
-                dictionary = cls.from_json_string(f.read())
-                instances = [cls.create(**inst) for inst in dictionary]
-                return instances
+
+        with open(filename, "r", encoding="utf-8") as f:
+            objs = cls.from_json_string(f.read())
+            instances = [cls.create(**elem) for elem in objs]
+            return instances
