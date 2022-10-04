@@ -21,3 +21,20 @@ class Square(Rectangle):
     def size(self, size):
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        ''' *** *** '''
+
+        argc = len(args)
+        kwargc = len(kwargs)
+        modif_attrs = ['id', 'size', 'x', 'y']
+
+        if argc > 4:
+            argc = 4
+
+        if argc > 0:
+            for i in range(argc):
+                setattr(self, modif_attrs[i], args[i])
+        elif kwargc > 0:
+            for k, v in kwargs.items():
+                setattr(self,k,v)
