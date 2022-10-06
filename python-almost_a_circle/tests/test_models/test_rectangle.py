@@ -6,10 +6,6 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
 
     def test_rect(self):
-        self.assertEqual(3, Rectangle(1, 2).id)
-
-    def test_rect1(self):
-        self.assertEqual(4, Rectangle(1, 2, 3).id)
-
-    def test_rect3(self):
-        self.assertEqual(5, Rectangle(1, 2, 3, 4).id)
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
