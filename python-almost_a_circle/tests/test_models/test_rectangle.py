@@ -9,3 +9,6 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(1, 2)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
+
+        with self.assertRaises(TypeError):
+            r2 = Rectangle("1", 2)
