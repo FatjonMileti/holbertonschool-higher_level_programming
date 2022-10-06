@@ -17,8 +17,8 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r4 = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
-            r3 = Rectangle(1, 2, 3, "4")
-        r4 = Rectangle(1, 2, 3, 4, 5)
+            r5 = Rectangle(1, 2, 3, "4")
+        r6 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
         with self.assertRaises(ValueError):
-            r1 = Rectangle(-1, 2)
+            r7 = Rectangle(-1, 2)
