@@ -2,7 +2,7 @@ import unittest
 from models.base import Base
 
 class TestBase(unittest.TestCase):
-    def test_1_1(self):
+    def test_base_assignments(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
         b2 = Base()
