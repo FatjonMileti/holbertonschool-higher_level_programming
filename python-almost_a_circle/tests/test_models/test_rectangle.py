@@ -12,3 +12,5 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             r2 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(1, "2")
