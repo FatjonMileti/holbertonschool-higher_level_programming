@@ -7,8 +7,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, 2)
-        b3 = Base(12)
-        self.assertEqual(b3.id, 12)
+        b3 = Base(89)
+        self.assertEqual(b3.id, 89)
     def test_base_to_json_string(self):
         self.assertEqual(Base.to_json_string(None), "null")
         self.assertEqual(Base.to_json_string([]), "[]")
