@@ -8,6 +8,8 @@ class TestRectangle(unittest.TestCase):
     def test_rect(self):
         self.assertEqual(2, Rectangle(1, 2).id)
 
-    def test_get_width(self):
-        rect = Rectangle(1, 2, 3)
-        self.assertEqual(1, rect.width)
+    def test_rect1(self):
+        self.assertEqual(1, Rectangle(1, 2, 3).id)
+
+    def test_rect3(self):
+        self.assertEqual(2, Rectangle(1, 2, 3, 4).id)
