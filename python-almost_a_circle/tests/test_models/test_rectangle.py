@@ -22,3 +22,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r6.id, 5)
         with self.assertRaises(ValueError):
             r7 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r8 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r9 = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            r10 = Rectangle(1, 0)
