@@ -79,3 +79,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r23.x, 3)
         r24 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
         self.assertEqual(r24.y, 4)
+    def test_rectangle_save_to_file(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+        Rectangle.save_to_file([Rectangle(1, 2)])
+    def test_rectangle_load_from_file(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        loaded = Rectangle.load_from_file()
