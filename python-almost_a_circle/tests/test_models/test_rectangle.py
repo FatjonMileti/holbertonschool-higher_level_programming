@@ -84,12 +84,19 @@ class TestRectangle(unittest.TestCase):
             os.remove("Rectangle.json")
         loaded = Rectangle.load_from_file()
 
-        r25 = Rectangle(5, 5)
-        r26 = Rectangle(8, 2, 5, 5)
+    def test_save_t_file(self):
+        """test save to file method"""
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        with open("Rectangle.json", "r", encoding="UTF8") as my_file:
+            string = my_file.read()
+        self.assertEqual(str, type(string))
 
-        l_input = [r25, r26]
-        Rectangle.save_to_file(l_input)
-        l_output = Rectangle.load_from_file()
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r", encoding="UTF8") as my_file:
+            self.assertEqual("[]", my_file.read())
 
-        for i in range(len(l_input)):
-            self.assertEqual(l_input[i].__str__(), l_output[i].__str__())
+    def test_save_to_file_empty(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r", encoding="UTF8") as my_file:
+            self.assertEqual("[]", my_file.read())
