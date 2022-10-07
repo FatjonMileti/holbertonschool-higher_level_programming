@@ -61,6 +61,10 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "#\n")
     def test_to_dictionary(self):
-        rect = Rectangle(1, 2, 3, 4, 5)
+        r18 = Rectangle(1, 2, 3, 4, 5)
         rect_dict = {'id': 5, 'x': 3, 'y': 4, 'width': 1, 'height': 2}
-        self.assertEqual(rect_dict, rect.to_dictionary())
+        self.assertEqual(rect_dict, r18.to_dictionary())
+    def test_update_zero_arg(self):
+        r19 = Rectangle(1, 2, 3, 4, 5)
+        r19.update()
+        self.assertEqual("[Rectangle] (5) 3/4 - 1/2", str(r19))
