@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import unittest
+import os.path
+import io 
+import sys
 from models.rectangle import Rectangle
 
 
@@ -38,3 +41,26 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_str(self):
         r14 = Rectangle(1, 1, 1, 1, 1)
         self.assertEqual(r14.__str__(), "[Rectangle] (1) 1/1 - 1/1")
+    def test_rectangle_display(self):
+        r15 = Rectangle(1, 1, 1, 1)
+        output = io.StringIO()
+        sys.stdout = output
+        r15.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "\n #\n")
+        r16 = Rectangle(1, 1, 1)
+        output = io.StringIO()
+        sys.stdout = output
+        r16.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), " #\n")
+        r17 = Rectangle(1, 1)
+        output = io.StringIO()
+        sys.stdout = output
+        r17.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n")
+    def test_to_dictionary(self):
+        rect = Rectangle(1, 2, 3, 4, 5)
+        rect_dict = {'id': 5, 'x': 3, 'y': 4, 'width': 1, 'height': 2}
+        self.assertEqual(rect_dict, rect.to_dictionary())
