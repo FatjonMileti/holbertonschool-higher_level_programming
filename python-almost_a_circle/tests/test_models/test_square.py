@@ -85,21 +85,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(s1.x, 2)
         s1 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
         self.assertEqual(s1.y, 3)
-    def test_square_save_to_file(self):
-        Square.save_to_file(None)
+    def test_save_to_file(self):
+        s1 = Square(1, 1, 1, 1)
+        s2 = Square(2, 2, 2, 2)
+        l = [s1, s2]
+        Square.save_to_file(l)
+        with open("Square.json", "r") as f:
+            ls = [s1.to_dictionary(), s2.to_dictionary()]
+            self.assertEqual(json.dumps(ls), f.read())
+            
+        l = []
+        Square.save_to_file(l)
         with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
-        Square.save_to_file([])
-        with open("Square.json", "r") as f:
-            self.assertEqual("[]", f.read())
-        Square.save_to_file([Square(1, 2)])
-    def test_square_load_from_file(self):
-        if os.path.exists("Square.json"):
-            os.remove("Square.json")
-        loaded = Square.load_from_file()
-        """
-        self.assertEqual(str([]), "[]")
-        Square.save_to_file(Square(1, 1, 1, 1, 1))
-        loaded = Square.load_from_file()
-        self.assertEqual(loaded, {'x': 1, 'y': 1, 'id': 1, 'height': 1, 'width': 1})
-        """
