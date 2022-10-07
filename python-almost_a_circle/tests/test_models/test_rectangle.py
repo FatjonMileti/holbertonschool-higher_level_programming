@@ -32,7 +32,7 @@ class TestRectangle(unittest.TestCase):
             r11 = Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             r12 = Rectangle(1, 2, 3, -4)
-            def test_rectangle_area(self):
+    def test_rectangle_area(self):
         r13 = Rectangle(1, 1)
         self.assertEqual(r13.area(), 1)
     def test_rectangle_str(self):
