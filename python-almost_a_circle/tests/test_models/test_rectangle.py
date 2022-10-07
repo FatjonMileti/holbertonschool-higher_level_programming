@@ -28,3 +28,5 @@ class TestRectangle(unittest.TestCase):
             r9 = Rectangle(0, 2)
         with self.assertRaises(ValueError):
             r10 = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            r11 = Rectangle(1, 2, -3)
