@@ -30,3 +30,11 @@ class TestRectangle(unittest.TestCase):
             r10 = Rectangle(1, 0)
         with self.assertRaises(ValueError):
             r11 = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r12 = Rectangle(1, 2, 3, -4)
+            def test_rectangle_area(self):
+        r13 = Rectangle(1, 1)
+        self.assertEqual(r13.area(), 1)
+    def test_rectangle_str(self):
+        r14 = Rectangle(1, 1, 1, 1, 1)
+        self.assertEqual(r14.__str__(), "[Rectangle] (1) 1/1 - 1/1")
